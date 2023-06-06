@@ -17,6 +17,8 @@ body {
   font-size: 16px;
   text-align: center;
   background-image: #fff;
+  background: url("https://images.pexels.com/photos/5638639/pexels-photo-5638639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
   font-family: "Open Sans", sans-serif;
   margin-top: 3rem;
 }
@@ -37,6 +39,9 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   font-size: 1.5em;
+  background: white;
+  opacity: .92;
+  padding-top: 10px;
 }
 
 .hide {
