@@ -16,6 +16,7 @@ addGuestButton.addEventListener("click", function () {
     if (guest !== "") {
       addToList(guest); //pass guest as an argument?
       clearInput(); //clears guest name from input box after click event
+      updateGuestCount();
     }
   });
 
@@ -30,4 +31,18 @@ const addToList = function (guest){
     const listItem = document.createElement("li"); //creates a list item, changed let to const now that function is scoped.
     listItem.innerText = guest; //changes inner text to guest name
     guestList.append(listItem); // adds guest name to guest list
+};
+
+//Update guest list number:
+const updateGuestCount = function (){
+  const guests = document.querySelectorAll(".guest-list li");
+  guestCount.InnerText = guests.length;
+
+    // if (guests.length ===8){
+    //   //add the hide class
+    //   addGuestButton, guestInput, guestInputLabel.classList.add("hide");
+    //   }
+    //   else { //remove the hide class
+    //   addGuestButton, guestInput, guestInputLabel.classList.remove("hide");
+    //   }
 };
