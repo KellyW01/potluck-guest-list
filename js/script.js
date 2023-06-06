@@ -1,8 +1,8 @@
 // invite button
 const addGuestButton = document.querySelector(".invite");
-// label for the invite button
+// label for the invite button 'add guest'
 const guestInputLabel = document.querySelector(".add-guest label");
-// text input box
+// text input box (outline of box)
 const guestInput = document.querySelector(".add-guest input");
 // unordered list (not yet visible)
 const guestList = document.querySelector(".guest-list");
@@ -10,6 +10,7 @@ const guestList = document.querySelector(".guest-list");
 const guestCount = document.querySelector(".attendance");
 // alert when guest list is full (not yet visible)
 const guestFull = document.querySelector(".alert");
+const seeYouSat = document.querySelector("footer");
 
 addGuestButton.addEventListener("click", function () {
     const guest = guestInput.value;
@@ -37,12 +38,18 @@ const addToList = function (guest){
 const updateGuestCount = function (){
   const guests = document.querySelectorAll(".guest-list li");
   guestCount.InnerText = guests.length;
-
-    // if (guests.length ===8){
-    //   //add the hide class
-    //   addGuestButton, guestInput, guestInputLabel.classList.add("hide");
-    //   }
-    //   else { //remove the hide class
-    //   addGuestButton, guestInput, guestInputLabel.classList.remove("hide");
-    //   }
+//prevent list from going over 8 people
+    if (guests.length ===8){
+      //add the hide class
+      guestInputLabel.classList.add("hide");
+      addGuestButton.classList.add("hide");
+      guestInput.classList.add("hide");
+      guestFull.classList.remove("hide");
+      seeYouSat.classList.revove("hide");
+      }
+      else { //remove the hide class
+      guestInputLabel.classList.remove("hide");
+      addGuestButton.classList.remove("hide");
+      guestInput.classList.remove("hide");
+      }
 };
