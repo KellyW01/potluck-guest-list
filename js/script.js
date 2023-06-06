@@ -2,7 +2,7 @@
 const addGuestButton = document.querySelector(".invite");
 // label for the invite button 'add guest'
 const guestInputLabel = document.querySelector(".add-guest label");
-// text input box (outline of box)
+// text input box 
 const guestInput = document.querySelector(".add-guest input");
 // unordered list (not yet visible)
 const guestList = document.querySelector(".guest-list");
@@ -15,6 +15,14 @@ const seeYouSat = document.querySelector("footer");
 addGuestButton.addEventListener("click", function () {
     const guest = guestInput.value;
     if (guest !== "") {
+      addToList(guest); //pass guest as an argument?
+      clearInput(); //clears guest name from input box after click event
+      updateGuestCount();
+    }
+  });
+  guestInput.addEventListener("keydown", function (e){
+    guest = guestInput.value;
+    if (guest !== "" && e.key === "Enter") {
       addToList(guest); //pass guest as an argument?
       clearInput(); //clears guest name from input box after click event
       updateGuestCount();
