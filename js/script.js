@@ -37,13 +37,14 @@ const addToList = function (guest){
 //Update guest list number:
 const updateGuestCount = function (){
   const guests = document.querySelectorAll(".guest-list li");
-  guestCount.InnerText = guests.length;
+  guestCount.innerText = guests.length;
 //prevent list from going over 8 people
     if (guests.length ===8){
-      //add the hide class
+      //add the hide class to hide button and input areas
       guestInputLabel.classList.add("hide");
       addGuestButton.classList.add("hide");
       guestInput.classList.add("hide");
+      //remove hide class to show list full message
       guestFull.classList.remove("hide");
       seeYouSat.classList.revove("hide");
       }
