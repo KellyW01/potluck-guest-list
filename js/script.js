@@ -12,16 +12,22 @@ const guestCount = document.querySelector(".attendance");
 const guestFull = document.querySelector(".alert");
 
 addGuestButton.addEventListener("click", function () {
-  const guest = guestInput.value;
-  // console.log(guest);
-  if (guest !== "") {
-    let listItem = document.createElement("li");
-    listItem.innerText = guest;
-    guestList.append(listItem);
-    clearInput();
-  }
-});
+    const guest = guestInput.value;
+    if (guest !== "") {
+      addToList(guest); //pass guest as an argument?
+      clearInput(); //clears guest name from input box after click event
+    }
+  });
 
-const clearInput = function () {
-  guestInput.value = "";
+const clearInput = function () { //clears guest name function
+  guestInput.value = ""; //changes input to blank
+};
+
+//refractor code: 
+
+//function just for adding a guest to the list
+const addToList = function (guest){
+    const listItem = document.createElement("li"); //creates a list item, changed let to const now that function is scoped.
+    listItem.innerText = guest; //changes inner text to guest name
+    guestList.append(listItem); // adds guest name to guest list
 };
